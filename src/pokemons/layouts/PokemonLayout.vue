@@ -7,10 +7,13 @@ import { pokemonsRoute } from '../router'
 
 const routerLinks: RouterLink[] =
   pokemonsRoute.children?.map(({ name, path, props }) => {
+    const { title, visible } = props as { title: string; visible: boolean }
+
     return {
       name: name?.toString ?? '',
       path: path,
-      title: (props as { title: string }).title,
+      title: title,
+      visible: visible,
     }
   }) || []
 </script>
