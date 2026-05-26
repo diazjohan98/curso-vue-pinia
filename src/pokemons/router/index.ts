@@ -6,7 +6,7 @@ export const pokemonsRoute: RouterRecordRaw = {
   component: () => import('@/pokemons/layouts/PokemonLayout.vue'),
   children: [
     {
-      path: `/${ROUTE_NAME}/by/id`,
+      path: `/${ROUTE_NAME}/by/:id`,
       props: { title: 'Pokemon por ID' },
       name: 'pokemon-id',
       component: () => import('@/pokemons/pages/PokemonById.vue'),
