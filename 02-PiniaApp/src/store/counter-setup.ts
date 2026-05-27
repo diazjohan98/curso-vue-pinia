@@ -11,6 +11,10 @@ export const useCounterSetupStore = defineStore('counterSetup',() => {
         lastChange.value = new Date();
     };
 
+    const reset = () => {
+        count.value = 0;
+    }
+
     return { 
         //state propierties
         count, 
@@ -21,5 +25,6 @@ export const useCounterSetupStore = defineStore('counterSetup',() => {
         //Actions
         incrementBy, 
         increment: () => incrementBy(1),
+        reset,
     };
 });
