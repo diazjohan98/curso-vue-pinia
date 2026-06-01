@@ -42,9 +42,9 @@ const useClients = () => {
         },
 
         //Getters
-        totalPageNumbers: computed(
-            () => [...new Array(totalPages.value)].map((v, i) => i + 1)
-        ),
+        // totalPageNumbers: computed(
+        //     () => [...new Array(totalPages.value)].map((v, i) => i + 1)
+        // ),
     }
 }
 

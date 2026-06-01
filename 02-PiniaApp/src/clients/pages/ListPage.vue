@@ -4,7 +4,7 @@ import PaginationNumbers from '../components/PaginationNumbers.vue';
 import LoadingModal from '@/shared/components/LoadingModal.vue';
 import useClients from '../composables/useClients.ts';
 
-const { isLoading } = useClients()
+const { isLoading, clients, currentPage, totalPages, getPage } = useClients()
 
 </script>
 
@@ -14,10 +14,10 @@ const { isLoading } = useClients()
 
 
         <!-- Client list  -->
-        <ClientList />
+        <ClientList :clients="clients" />
 
         <!-- PaginationNumbers  -->
-        <PaginationNumbers />
+        <PaginationNumbers :current-page="currentPage" :total-pages="totalPages" @page-change="getPage" />
 
         <!-- LoadingModal -->
         <LoadingModal v-if="isLoading" />
