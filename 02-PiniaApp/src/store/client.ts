@@ -23,6 +23,8 @@ export const useClientsStore = defineStore('clientsSetup', () => {
         },
         setPage(page: number) {
             if (currentPage.value === page) return;
+            if (page <= 0) return;
+
             currentPage.value = page;
         }
     };
