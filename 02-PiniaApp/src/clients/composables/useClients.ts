@@ -7,7 +7,7 @@ import { storeToRefs } from "pinia";
 
 const getClients = async (page: number): Promise<Client[]> => {
 
-    // await new Promise(resolve => { setTimeout(() => resolve(true), 2000) });
+    await new Promise(resolve => { setTimeout(() => resolve(true), 2000) });
 
     const { data } = await clientsApi.get<PaginatedClients[]>(`/clients?_page=${page}`);
     return data.data;
@@ -28,7 +28,7 @@ const useClients = () => {
         if (clients) {
             store.setClients(clients);
         }
-    })
+    }, { immediate: true });
 
     return {
         clients,
