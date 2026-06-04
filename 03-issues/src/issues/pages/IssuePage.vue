@@ -1,11 +1,11 @@
 <script setup lang="ts">
 import LoaderSpinner from 'src/shared/components/LoaderSpinner.vue';
-import { useRoute } from 'vue-router';
+// import { useRoute } from 'vue-router';
 import IssueCard from '../components/issues-list/IssueCard.vue';
 
 
-const route = useRoute();
-const { id } = route.params;
+// const route = useRoute();
+// const { id } = route.params;
 
 </script>
 
