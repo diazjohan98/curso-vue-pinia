@@ -6,10 +6,10 @@ import StateSelector from './StateSelector.vue';
 </script>
 
 <template>
-    <div class="q-px-md">
-        <StateSelector />
-        <LabelSelector class="q-mt-md" />
-    </div>
+  <div class="q-px-md">
+    <StateSelector />
+    <LabelSelector />
+  </div>
 </template>
 
 <style scoped></style>

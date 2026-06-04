@@ -41,6 +41,7 @@ const linksList: EssentialLinkProps[] = [
   },
 ];
 
+
 const leftDrawerOpen = ref(false);
 
 function toggleLeftDrawer() {
