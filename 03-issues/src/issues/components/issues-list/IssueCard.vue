@@ -27,7 +27,7 @@ const issue = toRef(props, 'issue')
 
       <q-item-section>
         <q-item-label>
-          <router-link :to="`/issue/${1}`">{{ issue.title }}</router-link>
+          <router-link :to="`/issue/${issue.number}`">{{ issue.title }}</router-link>
         </q-item-label>
         <q-item-label caption>
           {{ timeSince(issue.created_at) }} ago
