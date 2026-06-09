@@ -1,3 +1,4 @@
+// import { computed } from "vue";
 import { githubApi } from "src/api/githubApi";
 import type { Issue } from "../interfaces/issue";
 import { useQuery } from "@tanstack/vue-query";
@@ -17,14 +18,17 @@ const useIssue = (issueNumber: number) => {
 
   const issueQuery = useQuery({
     queryKey: ['issue', issueNumber],
-    queryFn: () => getIssue(issueNumber)
+    queryFn: () => getIssue(issueNumber),
+    gcTime: 1000 * 60, // 1 minuto
   });
 
 
   const issueCommentsQuery = useQuery({
     queryKey: ['issue', issueNumber, 'comments'],
     queryFn: () => getIssueComments(issueNumber),
-    gcTime: 1000 * 15, // 1 hour
+    // queryFn: () => getIssueComments(issueQuery.data.value?.number || 0),
+    gcTime: 1000 * 15, // 15 segundos
+    // enabled: computed(() => !!issueQuery.data.value,) // Solo se ejecuta si issueQuery tiene datos
   });
 
   return {
